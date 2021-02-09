@@ -9,8 +9,8 @@ public class Main {
         MainMenu menu = new MainMenu();
         menu.setVisible(true);
 //        JFrame frame = new JFrame("MainMenu");
-//        frame.setContentPane(new MainMenu().jPanel);
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setContentPane(new MainMenu().jPanel);//
+
 //        frame.pack();
 //        frame.setVisible(true);
     }

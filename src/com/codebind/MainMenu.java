@@ -1,12 +1,11 @@
 package com.codebind;
 
-import jdk.nashorn.internal.scripts.JO;
-
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.awt.Graphics;
+import java.awt.Color;
 
-public class MainMenu extends JFrame {
+public class MainMenu extends JFrame implements MouseListener {
     private JButton a1Button;
     private JButton a2Button;
     private JButton a3Button;
@@ -14,13 +13,15 @@ public class MainMenu extends JFrame {
     private JButton a5Button;
     private JButton a6Button;
     private JPanel jPanel;
-    private JPanel mainpanel;
+    private JPanel mainPanel;
 
     public MainMenu() {
         setTitle("Main menu");
-        setSize(400, 500);
+        setSize(600, 800);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        add(mainpanel);
+        add(mainPanel);
+        addMouseListener(this);
 
         a1Button.addActionListener(new ActionListener() {
             @Override
@@ -58,5 +59,32 @@ public class MainMenu extends JFrame {
                 JOptionPane.showMessageDialog(null, "Hello world 6");
             }
         });
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        Graphics g = getGraphics();
+        g.setColor(Color.YELLOW);
+        g.fillOval(e.getX()-25, e.getY()-25, 50, 50);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent mouseEvent) {
+
     }
 }
